@@ -17,6 +17,14 @@ document.getElementById("fortuneButton").onclick = function () {
 };
 
 //Add 3 More Features
+document.getElementById("inspiringMessage").onclick = function () {
+    axios.get("http://localhost:4000/api/inspiringMessage/")
+        .then(function (response) {
+            const data = response.data;
+            alert(data);
+        });
+};
+
 let listAllUsers = (res) => {
     const userListSection = document.getElementById('userList');
     const usersDataArr = res.data

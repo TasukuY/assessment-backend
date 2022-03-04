@@ -27,6 +27,21 @@ module.exports = {
       
         res.status(200).send(randomFortune);
       },
+      getInspiringMessage: (req, res) => {
+        const inspiringMessages = [
+            "When you have a dream, you’ve got to grab it and never let go.",
+            "Nothing is impossible. The word itself says ‘I’m possible!",
+            'There is nothing impossible to they who will try.',
+            "The bad news is time flies. The good news is you’re the pilot.",
+            "Life has got all those twists and turns. You’ve got to hold on tight and off you go.",
+            "Keep your face always toward the sunshine, and shadows will fall behind you."
+        ];
+
+        let randomIndex = Math.floor(Math.random() * inspiringMessages.length);
+        let randomInspiringMessage = inspiringMessages[randomIndex];
+      
+        res.status(200).send(randomInspiringMessage);
+      },
       getAllUsers: (req, res) => {
         console.log(users)
         res.status(200).send(users);
